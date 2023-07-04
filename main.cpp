@@ -14,8 +14,12 @@ float pi=3.14159,t=0;
 //___________________________________________________________________________________________________________________________________
 void acceptui()
 {
-    printf("Enter an atomic number less than or equal to 18");
+    printf("Enter an atomic number less than or equal to 18:\n");
     scanf("%d", &atno);
+    if(atno>18)
+    {
+        atno=0;
+    }
 }
 //_____________________________________________________________________________________________________________________
 void init()
@@ -210,11 +214,11 @@ void display()
 {
        glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(1.0, 1.0, 1.0);
-    write(-125, 300, GLUT_BITMAP_TIMES_ROMAN_24, "ATOM GENERATOR");
-
+    write(-125, 400, GLUT_BITMAP_TIMES_ROMAN_24, "ATOM GENERATOR");
     if (atno == 0) {
         home();
     } else {
+
         glPushMatrix(); // Save the current transformation matrix
 
         nucleus();
@@ -232,6 +236,99 @@ void display()
         glPopMatrix();
 
         glPopMatrix(); // Restore the previous transformation matrix
+
+        switch(atno)
+        {
+        case 1: glColor3f(0.5,0.7,1.0);
+                write(-50,300,GLUT_BITMAP_HELVETICA_18,"HYDROGEN");
+                glColor3f(1.0,0.0,0.0);
+                write(-20,-5,GLUT_BITMAP_HELVETICA_10,"p=1,n=0");
+                break;
+        case 2: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"HELIUM");
+                glColor3f(1.0,0.0,0.0);
+                write(-20,-5,GLUT_BITMAP_HELVETICA_10,"p=2,n=2");
+                break;
+        case 3: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"LITHIUM");
+                glColor3f(1.0,0.0,0.0);
+                write(-20,-5,GLUT_BITMAP_HELVETICA_10,"p=3,n=4");
+                break;
+        case 4: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"BERYLLIUM");
+                glColor3f(1.0,0.0,0.0);
+                write(-20,-5,GLUT_BITMAP_HELVETICA_10,"p=4,n=5");
+                break;
+        case 5: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"BORON");
+            glColor3f(1.0,0.0,0.0);
+                write(-20,-5,GLUT_BITMAP_HELVETICA_10,"p=5,n=6");
+                break;
+        case 6: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"CARBON");
+            glColor3f(1.0,0.0,0.0);
+                write(-20,-5,GLUT_BITMAP_HELVETICA_10,"p=6,n=6");
+                break;
+        case 7: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"NITROGEN");
+                write(-20,-5,GLUT_BITMAP_HELVETICA_10,"p=7,n=7");
+                break;
+        case 8: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"OXYGEN");
+            glColor3f(1.0,0.0,0.0);
+                write(-20,-5,GLUT_BITMAP_HELVETICA_10,"p=8,n=8");
+                break;
+        case 9: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"FLUORINE");
+            glColor3f(1.0,0.0,0.0);
+                write(-22,-5,GLUT_BITMAP_HELVETICA_10,"p=9,n=10");
+                break;
+        case 10: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"NEON");
+            glColor3f(1.0,0.0,0.0);
+                 write(-25,-5,GLUT_BITMAP_HELVETICA_10,"p=10,n=10");
+                 break;
+        case 11: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"SODIUM");
+            glColor3f(1.0,0.0,0.0);
+                 write(-20,-5,GLUT_BITMAP_HELVETICA_10,"p=11,n=12");
+                 break;
+        case 12: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"MAGNESIUM");
+            glColor3f(1.0,0.0,0.0);
+                 write(-25,-5,GLUT_BITMAP_HELVETICA_10,"p=12,n=12");
+                 break;
+        case 13: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"ALUMINIUM");
+            glColor3f(1.0,0.0,0.0);
+                 write(-25,-5,GLUT_BITMAP_HELVETICA_10,"p=13,n=14");
+                 break;
+        case 14: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"SILICON");
+            glColor3f(1.0,0.0,0.0);
+                 write(-25,-5,GLUT_BITMAP_HELVETICA_10,"p=14,n=14");
+                 break;
+        case 15: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"PHOSPHORUS");
+            glColor3f(1.0,0.0,0.0);
+                 write(-25,-5,GLUT_BITMAP_HELVETICA_10,"p=15,n=16");
+                 break;
+        case 16: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"SULFUR");
+            glColor3f(1.0,0.0,0.0);
+                 write(-25,-5,GLUT_BITMAP_HELVETICA_10,"p=16,n=16");
+                 break;
+        case 17: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"CHLORINE");
+            glColor3f(1.0,0.0,0.0);
+                 write(-25,-5,GLUT_BITMAP_HELVETICA_10,"p=17,n=18");
+                 break;
+        case 18: glColor3f(0.5,0.7,1.0);
+            write(-50,300,GLUT_BITMAP_HELVETICA_18,"ARGON");
+            glColor3f(1.0,0.0,0.0);
+                 write(-25,-5,GLUT_BITMAP_HELVETICA_10,"p=18,n=22");
+                 break;
+        }
     }
 
     glutPostRedisplay();
